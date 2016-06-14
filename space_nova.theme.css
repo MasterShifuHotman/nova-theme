@@ -1406,12 +1406,12 @@ textarea {
 }
 
 .settings .settings-header {
-	background:rgba(0,0,0,1) !important;
+	background:rgba(0,0,0,0.95) !important;
 }
 
 .settings .settings-inner,
 .settings .settings-actions {
-	background:rgba(0,0,0,1);
+	background:rgba(0,0,0,0.95);
     border-radius: 0px;
     border: 1px;
   
@@ -2129,4 +2129,84 @@ textarea {
 
 .form .btn-default:hover {
     border-bottom: none;
+}
+
+/* Others */
+
+accounts-list .connect-container .btn {
+    background: #fff;
+    width: 70px;
+    height: 70px;
+    border: 2px solid rgb(18, 18, 19);
+    border-radius: 0px;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: 46px Auto;
+    -webkit-transition: box-shadow .14s ease-out;
+    transition: box-shadow .18s ease-out;
+}
+
+.user-settings-modal-connections .user-settings-modal-connections-list .connection .connection-header {
+    height: 20px;
+    -webkit-box-flex: 1;
+    -o-box-flex: 1;
+    box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: box;
+    display: flex;
+    padding: 5px 6px;
+    -webkit-box-orient: horizontal;
+    -o-box-orient: horizontal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-align: center;
+    -o-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+}
+
+.user-settings-modal-connections .user-settings-modal-connections-list .connection .connection-integrations {
+    border: 1px solid #eceeef;
+    border-top-style: none;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: box;
+    display: flex;
+    padding: 5px;
+    -webkit-box-lines: multiple;
+    -moz-box-lines: multiple;
+    -o-box-lines: multiple;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.user-settings-modal-connections .user-settings-modal-connections-header label {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: capitalize;
+    color: #87909c;
+    display: block;
+}
+
+.settings .settings-inner .settings-panel-header {
+    margin-left: 0px;
+    margin-right: 40px;
+    padding-top: 28px;
+    padding-bottom: 28px;
+    flex-shrink: 0;
+}
+
+.user-settings-modal-connections .user-settings-modal-connections-list {
+    box-shadow: none;
+}
+
+.user-settings-modal-connections .user-settings-modal-connections-list .connection .connection-integrations {
+    border-color: rgba(0, 0, 0, 0) !important;
 }
