@@ -1,4 +1,4 @@
-//META{"name":"Space_Nova","description":"Theme made by Kyu","author":"Kyu","version":"2.2.0"}*//{}
+//META{"name":"Space_Nova","description":"Theme made by Kyu","author":"Kyu","version":"2.2.2"}*//{}
 
 
 /* Main background and settings background [You can edit these freely] */
@@ -171,6 +171,20 @@ textarea {
     width: 50px;
     line-height: 130%;
     text-align: center;
+}
+
+.guilds-wrapper .guilds .friends-icon {
+    width: 50px;
+    height: 50px;
+    background-image: url(/assets/89576a4bb71f927eb20e8aef987b499b.svg);
+    background-size: 32px 28px;
+    background-position: 50%;
+    background-repeat: no-repeat;
+	background-color: #000000;
+}
+
+.guilds-wrapper .guilds .friends-icon:hover {
+    background-color: #0C0C0C !important;
 }
 
 .guild-header ul {
@@ -1879,6 +1893,11 @@ textarea {
 .theme-dark #friends .friends-table .friends-row+.friends-row {
     border-top: 1px solid hsla(0, 0%, 100%, 0);
 }
+
+.theme-dark .header-toolbar button.active {
+    background-color: hsla(0, 0%, 0%, 0);
+}
+
 
 /* Others: Direct File Upload */
 
