@@ -118,11 +118,12 @@ textarea {
     display: flex;
     color: #fff;
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 300;
     opacity: 0.9;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
     filter: alpha(opacity=30);
-    text-shadow: 0 0px 0.5px rgba(251, 251, 251, 0.95);
+    text-shadow: 0 0px 1px rgba(251, 251, 251, 0.95);
+	color: grey;
 }
 
 .create-guild-container {
