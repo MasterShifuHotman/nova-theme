@@ -275,7 +275,11 @@ textarea {
 
 #friends .friends-table .friends-row .friends-column-actions .friends-action.friends-action-red {
     background-color: #AB0606;
+	border-radius: 2px;
 }
+
+#friends .friends-action.friends-action-red{
+    transition: .25s;}
 
 #friends .friends-table .friends-row .friends-column-actions .friends-action {
     cursor: pointer;
@@ -600,10 +604,17 @@ textarea {
     border-color: rgb(0, 0, 0);
 }
 
+.markdown-modal a {
+    color: #9D11B5;
+    -webkit-transition: .05s;
+    transition: .25s;
+    text-decoration: none;
+}
+
 .markdown-modal, .form .form-inner, .form .form-header, .form .form-actions, .need-help-modal .footer, .markdown-modal .markdown-modal-footer {
     background: rgb(0, 0, 0) !important;
     color: #710CF1;
-    border-color: rgb(0, 0, 0);
+    border-color: rgba(255, 255, 255, 0);
 }
 
 .need-help-modal .footer {
@@ -1402,7 +1413,7 @@ textarea {
 }
 
 .slider-bar {
-	background: rgba(255,255,255,0.0);
+	background: rgba(255,255,255,0.5);
 }
 
 .settings .settings-header {
@@ -1444,18 +1455,18 @@ textarea {
 .form .control-group input[type=password]:focus,
 .form .control-group input[type=text]:focus,
 .form .control-group textarea:focus {
-	border-color:rgba(255,255,255,0.3);
-	background:rgba(0,0,0,0.7);
-	color:rgba(255,255,255,1);
-	font-size:14px;
+    border-color: rgba(82, 82, 82, 0.3);
+    background: rgba(0,0,0,0.7);
+    color: rgba(255,255,255,1);
+    font-size: 14px;
 }
 
 .form .Select-control,
 .form .Select-option {
-	border:1px solid rgba(255,255,255,0.1) !important;
-	background:rgba(0,0,0,0.5);
-	color:rgba(255,255,255,0.5);
-	font-size:14px;
+    border: 1px solid rgba(255,255,255,0) !important;
+    background: rgba(0, 0, 0, 0.96);
+    color: rgb(255, 255, 255);
+    font-size: 14px;
 }
 
 .form .Select-option {
@@ -1489,6 +1500,12 @@ textarea {
 .form hr, .form .control-groups.control-separator, .instant-invites .instant-invites-header, .guild-settings-modal-integrations .guild-settings-modal-integrations-header, .guild-settings-modal-members .guild-settings-modal-members-header, .guild-settings-modal-members .guild-settings-modal-list .member+.member, .guild-settings-modal-members .guild-settings-modal-members-footer, #settings-roles .roles header {
     border-color: rgba(255, 255, 255, 0);
     box-shadow: none;
+}
+
+.instant-invite-popout hr {
+    border: 1px solid rgba(240, 240, 240, 0);
+    border-bottom: none;
+    margin: 10px -15px;
 }
 
 .form .control-group input[type=email]:disabled,
@@ -1542,12 +1559,23 @@ textarea {
 	background:#6827E8;
 }
 
+.radio .radio-inner {
+    width: 28px;
+    height: 28px;
+    background: #D6D4D4;
+    border-radius: 15px;
+    position: relative;
+    border: 1px solid rgba(214, 214, 214, 0.43);
+    display: inline-block;
+    margin-right: 10px;
+}
+
 .radio .radio-inner span:after {
 	background:#772FF5;
 }
 
 .user-settings-modal-keybinds .user-settings-modal-keybinds-header {
-	border-bottom:1px solid rgba(255,255,255,0.2);
+	border-bottom:1px solid rgba(255,255,255,0.0);
 }
 
 .user-settings-modal .voice-settings .reset-voice-settings {
@@ -1560,8 +1588,13 @@ textarea {
 }
 
 .checkbox .checkbox-inner input[type=checkbox]:checked+span {
-	background:#4712B3;
-	border-color:#3F109E;
+    background: rgba(120, 20, 230, 0.75);
+    border-color: rgba(85, 24, 208, 0.43);
+    transition: .25s;
+}
+
+.form .radio-group .radio, .form .checkbox-group .checkbox, .checkbox .checkbox-inner+span {
+    color: rgba(255, 255, 255, 0.98) !important;
 }
 
 .user-settings-modal-connections .user-settings-modal-accounts-list .connect-container .name {
@@ -1581,7 +1614,7 @@ textarea {
 }
 
 .tab-bar.TOP {
-	border-color:rgba(255,255,255,0.2);
+	border-color:rgba(255,255,255,0);
 }
 
 .tab-bar.TOP .tab-bar-item.selected {
@@ -1594,13 +1627,13 @@ textarea {
 }
 
 .user-settings-modal-games {
-	background:rgba(255,255,255,0.05) !important;
+	background:rgba(255,255,255,0.09) !important;
 	border:none !important;
 }
 
 .user-settings-modal-games .games-table .games-row .item-game,
 .user-settings-modal-games .games-table .games-row .item-overlay {
-	border-color:rgba(255,255,255,0.2) !important;
+	border-color: rgba(255, 255, 255, 0.00) !important;
 }
 
 .user-settings-modal-games .games-table .games-row .item-game .game-input,
@@ -1669,7 +1702,9 @@ textarea {
 }
 
 .popout section {
-	background:rgba(0,0,0,1) !important;
+    padding: 20px;
+    background-color: hsla(0, 0%, 1%, 0.96);
+    border-radius: 0 0 0px 0px;
 }
 
 .popout.popout-bottom header:before {
@@ -1715,16 +1750,52 @@ textarea {
 
 #user-profile-modal .tab-bar { background: rgba(0, 0, 0, 0.96); border-bottom: 0px solid rgba(0, 0, 0, 0); padding: 5px 20px 0; margin-bottom: 0; }
 
-#user-profile-modal .header, #user-profile-modal .btn {
+#user-profile-modal .header{
     background: rgba(91, 3, 144, 0.82);
+}
+
+#user-profile-modal .btn {
+    cursor: pointer;
+    width: 222px;
+    height: 30px;
+    border-radius: 2px;
+    background-color: #420469;
+    color: #fff;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 30px;
+    letter-spacing: .4;
+    text-align: center;
+    vertical-align: middle;
+}
+
+#user-profile-modal footer .btn.add-friend {
+    background: #4A0377;
+    transition: 0.35s;
+}
+
+#user-profile-modal footer .btn.add-friend:hover {
+    background: rgba(77, 5, 124, 0.85);
+    text-shadow: 0px 0px 1px;
+    transition: 0.35s;
 }
 
 #user-profile-modal .btn:hover {
 	background:#6408aa;
 }
 
-#user-profile-modal .sub-header, #user-profile-modal .scroller, #user-profile-modal .empty, #user-profile-modal footer {
+#user-profile-modal .sub-header, #user-profile-modal .scroller, #user-profile-modal .empty {
     background: rgba(0, 0, 0, 0.96) !important;
+}
+
+#user-profile-modal footer {
+    border-top: 0px solid hsla(0,0%,59%,.2);
+    background: rgba(6,3,4,0.98);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: box;
+    display: flex;
+    padding: 14px 20px;
 }
 
 #user-profile-modal .guilds .guild:hover {
@@ -1809,6 +1880,20 @@ textarea {
 .bda-slist .checkbox {
 	position:relative;
 	top:8px;
+}
+
+.checkbox .checkbox-inner span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 2px solid #cdcdcd;
+    -webkit-transition: .24s;
+    transition: 0.25s;
+    border-radius: 2px;
+    box-sizing: border-box;
+    background: rgba(205, 205, 205, 0.94);
 }
 
 #bd-themes-pane .bda-plugin-reload {
@@ -2209,4 +2294,22 @@ accounts-list .connect-container .btn {
 
 .user-settings-modal-connections .user-settings-modal-connections-list .connection .connection-integrations {
     border-color: rgba(0, 0, 0, 0) !important;
+}
+
+.notification-settings-modal.settings .settings-actions {
+    border-radius: 0 0 0px 0px;
+}
+
+.notification-settings-modal.settings .settings-inner:first-child {
+    border-top-left-radius: 0px;
+}
+
+.user-settings-modal .account-warning {
+    border: 1px solid #f04747;
+    border-radius: 3px;
+    background: #f04747;
+    padding: 10px 15px;
+    margin-bottom: 40px;
+    color: white;
+    flex-shrink: 0;
 }
