@@ -683,7 +683,7 @@ textarea {
 .channel-notification-settings,
 .markdown-modal .markdown-modal-header,
 .markdown-modal .markdown-modal-footer {
-	border-color:rgba(255,255,255,0.2);
+	border-color:rgba(255,255,255,0.0);
 }
 
 .modal-content .user-name {
@@ -1983,6 +1983,9 @@ textarea {
     background-color: hsla(0, 0%, 0%, 0);
 }
 
+.theme-dark .chat .title-wrap .topic a {
+    color: #790CA5;
+}
 
 /* Others: Direct File Upload */
 
