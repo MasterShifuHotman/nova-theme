@@ -77,35 +77,36 @@ textarea {
 
 /* Server List */
 
-.guild-channels .channel-text:hover a {
-    background: transparent;
-	background-color:transparent;}
-
-.channel.channel-text.selected, .private-channels .channel.selected, .private-channels .search-result.selected, .private-channels .search-result:hover {
-    background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.1) 100%, rgba(114, 0, 143, 0.1)) !important;
-}
- 
-.guild-channels .channel-text:hover a{
-	background: -webkit-linear-gradient(left, rgba(0, 0, 0, 1) 90%, rgba(0, 0, 0, 1)) !important;}
-
-.guild-channels .channel-text.selected{
-    background: transparent;
+.guild-channels .channel-text.selected {
+    background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.0) 85%, rgba(46, 49, 54, 0)) !important;
 }
 
 .guild-channels .channel-text.selected:before {
-    border-color: hsla(281, 100%, 28%, 0.85);
+	border-left: 4px solid hsla(281, 100%, 52%, 0.85);
+	transition: all .3s ease-in-out;
+}
+.guild-channels .channel-text:hover.channel-muted:before, .guild-channels .channel-text:hover:not(.unread):before {
+	border-left: 4px solid hsla(281, 100%, 28%, 0.85);
+	opacity: .25;
+	transition: all .3s ease-in-out;
 }
 
-.guild-channels .channel-text:hover.channel-muted:before, .guild-channels .channel-text:hover:not(.unread):before {
-    pointer-events: none;
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    content: ' ';
-    border-left: 2px solid rgba(126, 10, 165, 0.98);
-    opacity: .25;
+.guild-channels:not(.selected):hover .channel-text:not(.selected):hover {
+	background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0) 85%, rgba(46, 49, 54, 0)) !important;
 }
+.guild-channels:not(.selected):hover .channel-text:not(.selected):hover {
+	animation: fadein .45s ease-in-out;
+}
+.private-channels .channel.selected:before {
+    border-left: 4px solid hsla(281, 100%, 28%, 0.85);
+	transition: all .3s ease-in-out;
+}
+.private-channels .channel:not(.selected):hover:before {
+    border-left: 4px solid hsla(281, 100%, 39%, 0.85);
+	opacity: .35;
+	transition: all .3s ease-in-out
+}
+
 
 .guild-channels .channel a {
     -webkit-box-orient: horizontal;
@@ -158,6 +159,27 @@ textarea {
 
 .guilds-wrapper {
 	box-shadow:inset -10px 0px 20px -10px rgba(0,0,0,0.2);
+}
+
+.guilds-wrapper .guilds .guild.selected:before {
+    -webkit-transition: height .25s ease-in-out,margin-top .25s ease-in-out;
+    transition: height .25s ease-in-out,margin-top .25s ease-in-out;
+    height: 40px;
+    border-radius: 20px;
+    background: #fff;
+    margin-top: -20px;
+    box-shadow: 0px 0px 50px white;
+}
+
+.guilds-wrapper .guild-separator:after {
+    position: absolute;
+    top: 0;
+    left: -50%;
+    right: 20%;
+    content: ' ';
+    height: 0px;
+    background: rgba(0,0,0,0.33);
+    width: 100px;
 }
 
 .guilds-wrapper .guilds .friends-online {
@@ -612,8 +634,8 @@ textarea {
 }
 
 .markdown-modal, .form .form-inner, .form .form-header, .form .form-actions, .need-help-modal .footer, .markdown-modal .markdown-modal-footer {
-    background: rgb(0, 0, 0) !important;
-    color: #710CF1;
+    background: rgba(0,0,0,0.93) !important;
+    color: #FBF8F8;
     border-color: rgba(255, 255, 255, 0);
 }
 
@@ -675,7 +697,37 @@ textarea {
 
 .markdown-modal .markdown-modal-header {
 	color:#fff;
+    margin: 28px 0 0;
+    padding: 0 20px 28px;
+    border-bottom: 1px solid #f0f0f0;
+    position: relative;
+    font-weight: 300;
+    font-size: 22px;
+    flex-shrink: 0;
+    color: #99aab5;
+    text-align: center;
 }
+
+.markdown-modal {
+    background-color: #fff;
+    -webkit-box-orient: vertical;
+    -o-box-orient: vertical;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    border-radius: 2px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: box;
+    display: flex;
+    max-height: 698px;
+    width: 545px;
+    font-size: 13px;
+    line-height: 1.3em;
+    color: #747f8d;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
 
 .form .form-header,
 .form .form-actions,
@@ -718,6 +770,32 @@ textarea {
 	font-size:12px;
 	margin-top:5px;
 	color:#656565 !important;
+}
+
+.chat>.title-wrap>.topic .aka {
+    background: rgba(115, 127, 141, 0);
+    font-size: 10px;
+    font-weight: 600;
+    color: #fff;
+    margin-right: 8px;
+    padding: 1px 3px;
+    border-radius: 2px;
+    text-transform: uppercase;
+    vertical-align: bottom;
+    line-height: 22px;
+    flex-shrink: 0;
+}
+
+.chat>.title-wrap {
+    border-bottom: 1px solid #eceeef;
+    box-shadow: 0 2px 0 hsla(200, 9%, 93%, 0.06);
+    padding: 6px 20px;
+    min-height: 57px;
+    box-sizing: border-box;
+    background-color: #fff;
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
 }
 
 .markdown-modal .highlight,
@@ -947,7 +1025,7 @@ textarea {
 }
 
 .private-channels .channel:hover:not(.selected) .icon-friends {
-	background-color:#5918F2 !important;
+	background-color:#6924A6 !important;
 }
 
 .private-channels .channel.btn-friends .badge {
@@ -1028,6 +1106,12 @@ textarea {
 	background: rgba(0,0,0,0.0);
     padding-top: 10px;
     padding-bottom: 10px;
+    font-size: 13px;
+    text-transform: capitalize;
+    letter-spacing: .08em;
+    font-weight: 500;
+    padding: 0 30px;
+    text-align: right;
 }
 
 .channel-members .member+h2 {
@@ -1036,6 +1120,29 @@ textarea {
 
 .channel-members h2:first-of-type {
 	margin-top:0px !important;
+}
+
+.channel-members .member.member-status-offline .avatar-small {
+    -webkit-filter: grayscale(80%) blur(1px);
+    position: relative;
+    -webkit-transition: all .7s ease;
+    -moz-transition: all .7s ease;
+    -o-transition: all .7s ease;
+    transition: all .7s ease;
+    -webkit-transform: translateZ(0px);
+    transform: translateZ(0px);
+}
+
+.channel-members .member.popout-open .avatar-small, .channel-members .member:hover .avatar-small {
+    -webkit-filter: none !important;
+    filter: none;
+    position: relative;
+    -webkit-transition: all .8s ease-out;
+    -moz-transition: all .8s ease-out;
+    -o-transition: all .8s ease-out;
+    transition: all .8s ease-out;
+    -webkit-transform: translateZ(0px);
+    transform: translateZ(0px);
 }
 
 /* User Info Popout */
@@ -1709,6 +1816,11 @@ textarea {
 
 .popout.popout-bottom header:before {
 	border-bottom-color:#5525A8;
+}
+
+#autocomplete-popout .empty:hover {
+    background-color: rgba(255,255,255,0.0);
+    cursor: default;
 }
 
 #autocomplete-popout .row.selected,
