@@ -1,5 +1,6 @@
-//META{"name":"Space_Nova","description":"Theme made by Kyu","author":"Kyu","version":"2.3.2"}*//{}
+//META{"name":"Space_Nova","description":"Theme made by Kyu","author":"Kyu","version":"2.2.2"}*//{}
 
+/*Base CSS by @Hammock | Edited by @Narugokyu */
 
 /* Main background and settings background [You can edit these freely] */
 .app {background:url("https://i.imgur.com/psYBCaf.png") !important;
@@ -1106,12 +1107,12 @@ textarea {
 	background: rgba(0,0,0,0.0);
     padding-top: 10px;
     padding-bottom: 10px;
-    font-size: 13px;
+    font-size: 14px;
     text-transform: capitalize;
     letter-spacing: .08em;
     font-weight: 500;
     padding: 0 30px;
-    text-align: right;
+    text-align: left;
 }
 
 .channel-members .member+h2 {
