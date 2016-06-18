@@ -183,6 +183,21 @@ textarea {
     width: 100px;
 }
 
+.guilds-wrapper .guilds .guild.audio .guild-inner:after {
+    content: ' ';
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    width: 24px;
+    height: 24px;
+    background: url(/assets/2a78f3f87ce01e509ce8f9cfb9916680.svg) 50% no-repeat;
+    background-color: rgba(0, 0, 0, 0.46);
+    background-size: 16px;
+    border-radius: 12px;
+    overflow: hidden;
+    pointer-events: none;
+}
+
 .guilds-wrapper .guilds .friends-online {
     font-size: 10px;
     text-transform: uppercase;
@@ -582,15 +597,19 @@ textarea {
     font-weight: lighter;
 }
 
+.member-roles .manipulate:hover {
+    border-color: #2F2F2F;
+}
+
 .member-roles .member-role {
-    background-color: #f3f3f3;
+    background-color:  rgba(255,255,255,0.1);
     border-radius: 0px;
-    border: 1px solid #dbdde1;
+    border: 1px solid rgb(22, 23, 23, 0.4);
     font-size: 12px;
     line-height: 12px;
-    color: #737f8d;
+    color: #fff;
     font-weight: 400;
-    padding: 2px 4px;
+    padding: 6px 8px;
     display: inline-block;
     margin-right: 4px;
 }
@@ -1316,6 +1335,8 @@ textarea {
 }
 
 /* CHAT */
+
+
 .bd-minimal .chat>.title-wrap>.title {
     font-size: 16px;
 }
@@ -1395,17 +1416,21 @@ textarea {
 /* ACCOUNT BAR */
 .bd-minimal #voice-connection {
 	width:176px;
-    margin-left:-46px;
+    margin-left:-6px;
+}
+
+.bd-minimal .account .account-details .discriminator {
+    display: none
 }
 
 .bd-minimal .account {
 	width:206px;
-    margin-left:-46px;
+    margin-left: -6px;
 }
 
 .bd-minimal .account .avatar-small {
 	display:block !important;
-	margin-left:2px;
+	margin-left:5px;
 }
 
 .bd-minimal .account .username {
@@ -1413,7 +1438,7 @@ textarea {
 }
 
 .bd-minimal .account .btn-group {
-	margin-left:10px;
+	margin-left:0px;
 }
 
 .bd-minimal .account .btn-group .btn {
@@ -1610,6 +1635,24 @@ textarea {
     box-shadow: none;
 }
 
+.guild-settings-modal-members .member-buttons .btn {
+    min-width: 60px;
+    padding: 7px 9px;
+    margin: 0;
+    background: rgba(123,27,195,0.00);
+    border: 1px solid #737f8d;
+    border-radius: 2px;
+    color: #737f8d;
+    font-size: 14px;
+    -webkit-transition: none;
+    transition: none;
+}
+
+.guild-settings-modal-members .member-buttons .btn.btn-danger {
+    border: 1px solid rgba(193, 3, 3, 0.91);
+    color: rgba(193, 3, 3, 0.91);
+}
+
 .instant-invite-popout hr {
     border: 1px solid rgba(240, 240, 240, 0);
     border-bottom: none;
@@ -1635,6 +1678,13 @@ textarea {
 
 .guild-settings-modal-members {
 	background:none !important;
+}
+
+.guild-settings-modal-security .control-group .help-text a {
+    margin-left: 3px;
+    color: #7F23E8;
+    font-weight: 400;
+    cursor: pointer;
 }
 
 #settings-roles .roles {
@@ -2192,6 +2242,31 @@ textarea {
     color: #FFFFFF;
     padding: 10px 0;
     margin: 0;
+}
+
+.guild-settings-modal-integrations .guild-settings-modal-integrations-body.no-integrations p a {
+    color: #7700C1;
+    cursor: pointer;
+}
+
+.guild-settings-modal-integrations .guild-settings-modal-integrations-body.no-integrations p {
+    font-size: 14px;
+    font-weight: 700;
+    color: rgba(243, 240, 240, 0.77);
+    text-align: center;
+    text-transform: uppercase;
+    display: block;
+    padding: 0 120px;
+    line-height: 16px;
+}
+
+.guild-settings-modal-integrations .guild-settings-modal-integrations-body.no-integrations .integration-logos {
+    width: 113px;
+    height: 54px;
+    background: url(/assets/d331135780c1d4232cb9bbdfdb98eff2.svg) 50% no-repeat;
+    background-size: 100% auto;
+    margin-bottom: 2px;
+    -webkit-filter: invert() hue-rotate(200deg);
 }
 
 .create-guild-container .action.create .action-header {
